@@ -12,9 +12,7 @@ function ProfileFollowing() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await Axios.get(
-          `http://localhost:8080/profile/${username}/following`
-        )
+        const response = await Axios.get(`/profile/${username}/following`)
         // console.log(response.data)
         setLoading(false)
         setPosts(response.data)

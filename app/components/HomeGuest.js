@@ -198,7 +198,7 @@ function HomeGuest() {
       async function fetchResults() {
         try {
           const response = await Axios.post(
-            "http://localhost:8080/doesUsernameExist",
+            "/doesUsernameExist",
             { username: state.username.value },
             { cancelToken: ourRequest.token }
           )
@@ -222,7 +222,7 @@ function HomeGuest() {
       async function fetchResults() {
         try {
           const response = await Axios.post(
-            "http://localhost:8080/doesEmailExist",
+            "/doesEmailExist",
             { email: state.email.value },
             { cancelToken: ourRequest.token }
           )
@@ -246,7 +246,7 @@ function HomeGuest() {
       async function fetchResults() {
         try {
           const response = await Axios.post(
-            "http://localhost:8080/register",
+            "/register",
             {
               username: state.username.value,
               email: state.email.value,

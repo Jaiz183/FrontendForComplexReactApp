@@ -24,7 +24,7 @@ function SinglePost() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await Axios.get(`http://localhost:8080/post/${id}`)
+        const response = await Axios.get(`/post/${id}`)
         console.log(response.data)
         setPost(response.data)
         setLoading(false)
@@ -58,12 +58,9 @@ function SinglePost() {
     )
     if (isConfirmed) {
       try {
-        const response = await Axios.delete(
-          `http://localhost:8080/post/${id}`,
-          {
-            data: { token: appState.user.token }
-          }
-        )
+        const response = await Axios.delete(`/post/${id}`, {
+          data: { token: appState.user.token }
+        })
         if (response.data == "Success") {
           appDispatch({ type: "flashMessage", value: "Post deleted." })
           navigate(`/profile/${appState.user.username}`)

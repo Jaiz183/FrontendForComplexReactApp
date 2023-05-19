@@ -33,7 +33,7 @@ function Profile() {
     async function fetchData() {
       try {
         const response = await Axios.post(
-          `http://localhost:8080/profile/${username}`,
+          `/profile/${username}`,
           {
             token: appState.user.token
           },
@@ -86,7 +86,7 @@ function Profile() {
       async function fetchData() {
         try {
           const response = await Axios.post(
-            `http://localhost:8080/addFollow/${state.profileData.username}`,
+            `/addFollow/${state.profileData.username}`,
             { token: appState.user.token },
             { cancelToken: ourRequest.token }
           )
@@ -117,7 +117,7 @@ function Profile() {
       async function fetchData() {
         try {
           const response = await Axios.post(
-            `http://localhost:8080/removeFollow/${state.profileData.username}`,
+            `/removeFollow/${state.profileData.username}`,
             { token: appState.user.token },
             { cancelToken: ourRequest.token }
           )

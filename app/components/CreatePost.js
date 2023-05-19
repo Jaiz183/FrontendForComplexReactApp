@@ -18,7 +18,7 @@ function CreatePost() {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const response = await Axios.post("http://localhost:8080/create-post", {
+      const response = await Axios.post("/create-post", {
         title: title,
         body: body,
         token: appState.user.token

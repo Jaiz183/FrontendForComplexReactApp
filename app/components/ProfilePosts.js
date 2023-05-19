@@ -13,9 +13,7 @@ function ProfilePosts() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await Axios.get(
-          `http://localhost:8080/profile/${username}/posts`
-        )
+        const response = await Axios.get(`/profile/${username}/posts`)
         // console.log(response.data)
         setLoading(false)
         setPosts(response.data)

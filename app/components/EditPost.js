@@ -45,7 +45,7 @@ function EditPost() {
       case "submitRequest":
         async function submitRequest() {
           try {
-            await Axios.post(`http://localhost:8080/post/${draft.id}/edit`, {
+            await Axios.post(`/post/${draft.id}/edit`, {
               title: draft.title.value,
               body: draft.body.value,
               token: appState.user.token
@@ -99,9 +99,7 @@ function EditPost() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await Axios.get(
-          `http://localhost:8080/post/${state.id}`
-        )
+        const response = await Axios.get(`/post/${state.id}`)
         if (response.data) {
           dispatch({ type: "fetchData", value: response.data })
         } else {
